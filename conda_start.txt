@@ -1,0 +1,40 @@
+How to install conda
+
+1. install xcode tools
+
+  run the following in the terminal
+
+    xcode-select —install
+
+  it will bring up a window, click "install" to proceed
+
+2. Download and install miniforge
+
+  run the following commands in the terminal, one at a time
+
+    curl -fsSLo Miniforge3.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-$(uname -m).sh
+    bash Miniforge3.sh
+
+  The second command will ask you several questions. Type "yes" when asked and otherwise accept the defaults.
+  After these commands are done, close your terminal window and restart it. When you do, you should see "(base)" somewhere 
+  in the text before the space where you can write. (This text is called the command prompt.)
+
+3. Make your first conda environment! A conda environment is a sandboxed environment where you can install packages/code in an 
+   isolated fashion. You can have more than one environment locally. Any time you want to use an environment, it needs to be 
+   activated. 
+
+  Here is some example code to show you how it is done (the stuff after "#"s are comments, no need to run those)
+
+    conda create -n my-new-env-name python=3.8 jupyter notebook matplotlib scipy galsim numpy ipython nb_conda_kernels
+    # ^ this command runs for a while
+    # then you type
+    conda activate my-new-env-name
+    # finally you can do things like start a notebook like this
+    jupyter notebook
+    # ^this command will print out a web address and launch jupyter in your browser
+    #  from the main jupyter screen, you can then launch a notebook by going to the new dropdown and selecting a kernel (the same as your conda env)
+    #  you can also reopen notebooks you have already saved
+  
+
+  
+  
